@@ -1,16 +1,12 @@
-// let arr = [];
-// arr.forEach(element => {
-//   console.log(element);
-// });
+let inputField = document.getElementById('inputField');
+let input = inputField.value;
 
-// let arrNew = arr.map(p => p);
-// console.log(arrNew);
-// const name = 'Hero'; const age = 34;
-// const person = { name, age }; console.log(person);
-// const adventurer = { name: 'Alice', cat: { name: 'Lucy' } };
-// const ratName = adventurer?.rat?.name;
-// console.log(ratName);
-// let person = null;
-// console.log(person ? person : "person is null");
-const obj = { a: 1 };
-console.log(Object.keys(obj).length === 0);
+const addTask = () => {
+  console.log(inputField.value)
+  let taskList = document.getElementById('task-list');
+  const divClass = document.createElement('ul');
+  divClass.innerHTML = `
+  <li> ${inputField.value}</li>
+  `
+  taskList.appendChild(divClass);
+}
