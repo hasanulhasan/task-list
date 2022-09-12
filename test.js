@@ -10,3 +10,7 @@ const addTask = () => {
   `
   taskList.appendChild(divClass);
 }
+const clearAllTask = () => {
+  let taskList = document.getElementById('task-list');
+  taskList.innerHTML = ``;
+}
