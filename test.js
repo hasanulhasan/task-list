@@ -22,3 +22,19 @@ taskLists.addEventListener('click', function (e) {
     taskLists.removeChild(e.target.parentElement);
   }
 })
+
+let searchField = document.getElementById('searchField');
+searchField.addEventListener('keyup', function (e) {
+  let searchValue = e.target.value.toLowerCase();
+  console.log(searchValue);
+
+  document.querySelectorAll('li').forEach(task => {
+    let item = task.firstChild.textContent;
+    if (item.toLocaleLowerCase().indexOf(searchValue) != -1) {
+      task.style.display = 'block'
+    }
+    else {
+      task.style.display = 'none'
+    }
+  })
+})
