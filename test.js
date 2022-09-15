@@ -1,9 +1,11 @@
 let inputField = document.getElementById('inputField');
+let searchField = document.getElementById('searchField');
 const addTask = () => {
   if (inputField.value === '') {
     alert('Enter a Task');
   }
   else {
+    searchField.value = ``;
     let taskList = document.getElementById('task-list');
     const li = document.createElement('li');
     li.innerHTML = `${inputField.value}<img src="close.png" height="8px" width="8px">`
@@ -23,7 +25,7 @@ taskLists.addEventListener('click', function (e) {
   }
 })
 
-let searchField = document.getElementById('searchField');
+
 searchField.addEventListener('keyup', function (e) {
   let searchValue = e.target.value.toLowerCase();
   console.log(searchValue);
@@ -31,10 +33,10 @@ searchField.addEventListener('keyup', function (e) {
   document.querySelectorAll('li').forEach(task => {
     let item = task.firstChild.textContent;
     if (item.toLocaleLowerCase().indexOf(searchValue) != -1) {
-      task.style.display = 'block'
+      task.style.display = 'block';
     }
     else {
-      task.style.display = 'none'
+      task.style.display = 'none';
     }
   })
 })
